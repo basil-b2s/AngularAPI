@@ -10,19 +10,25 @@ import { ApiCallService } from './api-call.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // title = 'angular-api';
-
+  title = 'angular-api';
+  data : any;
   constructor(private getApi : ApiCallService){}
 
-  // ngOnInit(){
-  //   this.getApi.getData().subscribe((res) => {
-  //     console.log(res)
-  //   })
-  // }
+
 
   trueApiCall(){
     this.getApi.getData().subscribe((res) => {
+      this.data = res.title
       console.log(res)
+    })
+  }
+
+  fakeApiCall(){
+    this.getApi.getFakeData().subscribe((res) =>{
+      console.log(res)
+    },
+    error => {
+      console.error('Error Occured : ', error)
     })
   }
 }
