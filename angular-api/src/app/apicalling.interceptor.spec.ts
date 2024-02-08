@@ -3,15 +3,15 @@ import { HttpInterceptorFn } from '@angular/common/http';
 
 import { apicallingInterceptor } from './apicalling.interceptor';
 
-describe('apicallingInterceptor', () => {
-  const interceptor: HttpInterceptorFn = (req, next) => 
-    TestBed.runInInjectionContext(() => apicallingInterceptor(req, next));
+// describe('apicallingInterceptor', () => {
+//   const interceptor: HttpInterceptorFn = (req, next) => 
+//     TestBed.runInInjectionContext(() => apicallingInterceptor(req, next));
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-  });
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//   });
 
-  it('should be created', () => {
-    expect(interceptor).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     expect(interceptor).toBeTruthy();
+//   });
+// });

@@ -5,23 +5,27 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiCallService } from './api-call.service';
 import { apicallingInterceptor } from './apicalling.interceptor';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { ToasterService } from './toaster.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     ApiCallService,
-    { provide: HTTP_INTERCEPTORS, useClass: apicallingInterceptor, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: apicallingInterceptor,
+      multi: true,
+    },
   ],
-  bootstrap : [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
