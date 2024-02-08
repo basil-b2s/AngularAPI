@@ -11,4 +11,8 @@ export class ApiCallService {
   getData(){
     return this.http.get<any>('https://jsonplaceholder.typicode.com/todos/1');
   }
+
+  getFakeData(){
+    return this.http.get<any>('https://jsonplaceholder.typicode.com/todoooooos/1');
+  }
 }
